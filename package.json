@@ -1,0 +1,15 @@
+{
+  "name": "bootectron",
+  "version": "1.0.0",
+  "description": "Bootectron",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/jbpasquier/bootectron",
+  "author": "JB Pasquier",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}
