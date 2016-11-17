@@ -1,6 +1,4 @@
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const {app, Menu, Tray, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 let mainWindow;
@@ -29,4 +27,16 @@ app.on('activate', function() {
     if (mainWindow === null) {
         createWindow();
     }
+});
+let tray = null;
+app.on('ready', () => {
+  tray = new Tray('./assets/favicon.png');
+  const contextMenu = Menu.buildFromTemplate([
+    {label: 'Activate Bananas', type: 'radio'},
+    {label: 'Activate Unicorn-mode', type: 'radio'},
+    {label: 'Like it', type: 'radio', checked: true},
+    {label: 'Fave it', type: 'radio'}
+  ]);
+  tray.setToolTip('Hello my name is Bootectron.');
+  tray.setContextMenu(contextMenu);
 });
