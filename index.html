@@ -12,40 +12,13 @@
 
     </head>
 
-    <body ng-controller='mainController as vm'>
+    <body>
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar" ng-repeat='i in [1,2,3]'></span>
-                    </button>
-                    <a class="navbar-brand" href="#"></a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="nav navbar-nav">
-                        <li ng-repeat='e in vm.menu'>
-                            <a href="#">{{e}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="clearfix spade"></div>
+        <ng-include src="'views/static/navbar.html'"></ng-include>
 
         <ng-view autoscroll="true"></ng-view>
 
-        <div class="clearfix spade"></div>
-
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container-fluid">
-                <div class="navbar-form navbar-left">
-                    Footer
-                </div>
-            </div>
-        </nav>
+        <ng-include src="'views/static/footer.html'"></ng-include>
 
     </body>
 

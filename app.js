@@ -1,18 +1,24 @@
-const {app, Menu, Tray, BrowserWindow} = require('electron');
+const {
+    app,
+    Menu,
+    Tray,
+    BrowserWindow
+} = require('electron');
 const path = require('path');
 const url = require('url');
 let mainWindow;
+
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1024,
         height: 768
     });
     mainWindow.loadURL(url.format({
-            pathname: path.join(__dirname, 'index.html'),
-            protocol: 'file:',
-            slashes: true
-        }));
-        // mainWindow.webContents.openDevTools();
+        pathname: path.join(__dirname, 'index.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+    // mainWindow.webContents.openDevTools();
     mainWindow.on('closed', function() {
         mainWindow = null;
     });
@@ -30,13 +36,21 @@ app.on('activate', function() {
 });
 let tray = null;
 app.on('ready', () => {
-  tray = new Tray('./assets/favicon.png');
-  const contextMenu = Menu.buildFromTemplate([
-    {label: 'Activate Bananas', type: 'radio'},
-    {label: 'Activate Unicorn-mode', type: 'radio'},
-    {label: 'Like it', type: 'radio', checked: true},
-    {label: 'Fave it', type: 'radio'}
-  ]);
-  tray.setToolTip('Hello my name is Bootectron.');
-  tray.setContextMenu(contextMenu);
+    tray = new Tray('./assets/favicon.png');
+    const contextMenu = Menu.buildFromTemplate([{
+        label: 'Activate Bananas',
+        type: 'radio'
+    }, {
+        label: 'Activate Unicorn-mode',
+        type: 'radio'
+    }, {
+        label: 'Like it',
+        type: 'radio',
+        checked: true
+    }, {
+        label: 'Fave it',
+        type: 'radio'
+    }]);
+    tray.setToolTip('Hello my name is Bootectron.');
+    tray.setContextMenu(contextMenu);
 });
