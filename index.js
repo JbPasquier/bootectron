@@ -1,7 +1,7 @@
 const {
     app,
     Menu,
-    Tray,
+    // Tray,
     BrowserWindow
 } = require('electron');
 const path = require('path');
@@ -34,6 +34,7 @@ app.on('activate', function() {
         createWindow();
     }
 });
+/*
 let tray = null;
 app.on('ready', () => {
     tray = new Tray('./assets/favicon.png');
@@ -54,3 +55,4 @@ app.on('ready', () => {
     tray.setToolTip('Hello my name is Bootectron.');
     tray.setContextMenu(contextMenu);
 });
+*/

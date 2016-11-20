@@ -2,7 +2,7 @@
   "name": "bootectron",
   "version": "1.0.0",
   "description": "Bootectron",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "electron ."
   },
