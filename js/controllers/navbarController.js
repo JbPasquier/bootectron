@@ -3,6 +3,6 @@ function navbarController(electron) {
       electron.remote.getCurrentWindow().close();
     };
     this.logout = () => {
-      electron.dialog.showErrorBox('Nop', 'You can\'t logout because you arn\'t logged')
-    }
+      electron.dialog.showErrorBox('Nop', 'You can\'t logout because you arn\'t logged');
+    };
 }
