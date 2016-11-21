@@ -2,6 +2,7 @@ const {
     app,
     Menu,
     // Tray,
+    powerSaveBlocker,
     BrowserWindow
 } = require('electron');
 const path = require('path');
@@ -9,6 +10,7 @@ const url = require('url');
 let mainWindow;
 
 function createWindow() {
+    const sleepPreventer = powerSaveBlocker.start('prevent-display-sleep');
     mainWindow = new BrowserWindow({
         width: 1024,
         height: 768
@@ -20,6 +22,7 @@ function createWindow() {
     }));
     // mainWindow.webContents.openDevTools();
     mainWindow.on('closed', function() {
+        powerSaveBlocker.stop(sleepPreventer);
         mainWindow = null;
     });
 }
