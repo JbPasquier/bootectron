@@ -97,6 +97,7 @@ angular.module('electangular', [])
     desktopCapturer: core.desktopCapturer,
     webFrame: core.webFrame,
     clipboard: core.clipboard,
+    remote: remote,
     crashReporter: core.crashReporter,
     nativeImage: core.nativeImage,
     process: core.process,

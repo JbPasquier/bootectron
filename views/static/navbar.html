@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller='navbarController as vm'>
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -21,6 +21,14 @@
                     <a href="#">Home</a>
                 </li>
             </ul>
+            <div class="navbar-form navbar-right">
+                <button class="btn btn-warning" ng-click='vm.logout()'>
+                    Se déconnecter
+                </button>
+                <button class="btn btn-danger" ng-click='vm.exit()'>
+                    Fermer
+                </button>
+            </div>
         </div>
     </div>
 </nav>

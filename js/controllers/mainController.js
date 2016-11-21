@@ -4,6 +4,7 @@ function mainController(electron) {
     this.description = "My name is AnguBootstrap";
     this.alert = () => {
         electron.clipboard.writeText('Do you like bananas ?');
-        electron.dialog.showErrorBox('Hey dude', 'Message copié dans le presse papier');
+        electron.dialog.showErrorBox('Hey dude', 'Message copié dans le presse papier, ouverture de pastebin.com');
+        electron.shell.openExternal('http://pastebin.com');
     };
 }

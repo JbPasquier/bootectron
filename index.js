@@ -11,10 +11,8 @@ let mainWindow;
 
 function createWindow() {
     const sleepPreventer = powerSaveBlocker.start('prevent-display-sleep');
-    mainWindow = new BrowserWindow({
-        width: 1024,
-        height: 768
-    });
+    mainWindow = new BrowserWindow();
+    mainWindow.setFullScreen(true);
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
